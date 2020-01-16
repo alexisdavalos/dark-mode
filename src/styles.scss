@@ -1,4 +1,4 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
+npm /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
 */
@@ -183,10 +183,14 @@ img {
 .dark-mode__toggle {
   background: papayawhip;
   border-radius: 50px;
-  border: 1px solid black;
-  height: 20px;
+  border: 2px solid black;
+  height: 22px;
   position: relative;
   width: 40px;
+}
+.dark-on{
+  background:#282c34;
+  border: 2px solid papayawhip;
 }
 
 .toggle {
@@ -201,6 +205,7 @@ img {
 
 .toggled {
   left: 18px;
+  background: papayawhip;
 }
 
 .charts {

@@ -5,10 +5,13 @@ export const useDarkMode = (key, initialValue) => {
     const [darkMode, setDarkMode] = useLocalStorage(key, initialValue);
     useEffect(() =>{
         const body = document.querySelector('body');
+        let toggle = document.querySelector('.dark-mode__toggle');
         if(darkMode){
-            body.classList.add('dark-mode')
+            body.classList.add('dark-mode');
+            toggle.classList.add('dark-on');
         }else{
-            body.classList.remove('dark-mode')
+            body.classList.remove('dark-mode');
+            toggle.classList.remove('dark-on');
         }
     },[darkMode])
 
