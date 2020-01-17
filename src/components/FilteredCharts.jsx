@@ -1,7 +1,7 @@
 import React from "react";
 import Chart from "./Chart";
 
-const Charts = ({ coinData, coinValue, handleSubmit }) => {
+const Charts = ({ coinData, coinValue, coinObject, handleSubmit }) => {
   // console.log('New Coin Value:',newCoin);
   return (
     <>
@@ -15,16 +15,14 @@ const Charts = ({ coinData, coinValue, handleSubmit }) => {
       <button>Filter</button>
     </form>
     <div className="charts">
-      {coinData.map(coin => (
-        <div className="chart__container" key={coin.name}>
-          <h2 className="coin__title">{coin.name}</h2>
-          <h4 className="coin__symbol">{coin.symbol}</h4>
+        <div className="chart__container">
+          <h2 className="coin__title">{coinObject.name}</h2>
+          <h4 className="coin__symbol">{coinObject.symbol}</h4>
           <div className="coin__logo">
-            <img src={coin.image} height="40" alt={coin.name} />
+            <img src={coinObject.image} height="40" alt={coinObject.name} />
           </div>
-          <Chart sparklineData={coin.sparkline_in_7d.price} />
+          {(coinValue === '' || coinObject === []) ? <p>Loading...</p> : <Chart sparklineData={coinObject.sparkline_in_7d.price} />}
         </div>
-      ))}
     </div>
     </>
   );
