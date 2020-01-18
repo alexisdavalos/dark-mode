@@ -21,7 +21,7 @@ const Charts = ({ coinData, coinValue, coinObject, handleSubmit }) => {
           <div className="coin__logo">
             <img src={coinObject.image} height="40" alt={coinObject.name} />
           </div>
-          {(coinValue === '' || coinObject === []) ? <p>Loading...</p> : <Chart sparklineData={coinObject.sparkline_in_7d.price} />}
+          {(coinValue === '' || (!handleSubmit)) ? <p>Loading...</p> : <Chart sparklineData={coinObject.sparkline_in_7d.price} />}
         </div>
     </div>
     </>

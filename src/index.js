@@ -42,6 +42,11 @@ const App = () => {
      console.log('filtered coin:',coinData.filter(coin => (coin.id === coinValue) ));
      setCoinObject(coinData.filter(coin => (coin.id === coinValue)))
      console.log('sparkline',coinObject)
+     if(coinObject === []){
+       return false
+     }else{
+       return true
+     }
     //  getCoin(coinValue) //fetches coin 
 
   }
